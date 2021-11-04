@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "viagens": {
+    "NotasProf": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/viagens",
+            "outputPath": "dist/NotasProf",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "viagens:build:production"
+              "browserTarget": "NotasProf:build:production"
             },
             "development": {
-              "browserTarget": "viagens:build:development"
+              "browserTarget": "NotasProf:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "viagens:build"
+            "browserTarget": "NotasProf:build"
           }
         },
         "test": {
@@ -140,5 +140,5 @@
       }
     }
   },
-  "defaultProject": "viagens"
+  "defaultProject": "NotasProf"
 }
