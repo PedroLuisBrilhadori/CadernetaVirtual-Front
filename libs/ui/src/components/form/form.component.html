@@ -1,1 +1,23 @@
-<p>form works!</p>
+<form class="example-form">
+    <table class="nomes" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Sobrenome</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+    </tr></table>
+    <div *ngFor="let bimestre of bimestres">
+        <h3>{{bimestre.nome}} Bimestre</h3>
+        <table class="notas" cellspacing="0"><tr>
+            <td class="td-notas" *ngFor="let materia of materias">
+                <mat-form-field class="notas" appearance="fill">
+                    <mat-label>{{materia.nome}}</mat-label>
+                    <input matInput placeholder="Ex. 10" type="number" name="{{materia.nome}}" [(ngModel)]="materia.nota" >
+                </mat-form-field>
+            </td>
+        </table>
+    </div>
+  </form>
