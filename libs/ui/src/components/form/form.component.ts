@@ -11,16 +11,39 @@ export class FormComponent{
   materias: any[];
 
   bimestres = [
-    {nome: 'Primeiro'},
-    {nome: 'Segundo'},
-    {nome: 'Terceiro'},
-    {nome: 'Quarto'}
+    {
+      nome: 'Primeiro',
+      notasBimestre: [
+        {nome: 'Prova 1'},
+        {nome: 'Trabalho'},
+        {nome: 'Prova 2'}
+      ]
+    },
+    {
+      nome: 'Segundo',
+      notasBimestre: [
+        {nome: 'Prova 1'},
+        {nome: 'Prova 2'},
+        {nome: 'Prova 3'}
+      ]
+    },
+    {
+      nome: 'Terceiro',
+      notasBimestre: [
+        {nome: 'Trabalho 1'},
+        {nome: 'Trabalho 2'},
+        {nome: 'Prova 1'}
+      ]
+    },
+    {
+      nome: 'Quarto',
+      notasBimestre: [
+        {nome: 'Prova 1'},
+        {nome: 'Trabalho'},
+      ]
+    }
   ]
 
-  notasBimestre = [
-    {nome: 'Prova 1'},
-    {nome: 'Prova 2'},
-    {nome: 'Prova 3'}
-  ]
+
 
 }

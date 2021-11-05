@@ -11,6 +11,13 @@
   .notas {
     width: 100%;
   }
+
+  .nota-nome{
+    padding-right: 8px;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+  }
   
   td {
     padding-right: 8px;
@@ -18,5 +25,5 @@
   
   .td-notas {
     padding-right: 8px;
-    max-width: 60px;
+    max-width: 90px;
   }
