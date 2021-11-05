@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { GridModule, CardModule, ToolbarModule} from 'projects/ui';
+import { GridModule, CardModule, ToolbarModule, FormModule} from 'libs/ui';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { GridModule, CardModule, ToolbarModule} from 'projects/ui';
     
     GridModule,
     CardModule,
-    ToolbarModule
+    ToolbarModule,
+    FormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

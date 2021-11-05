@@ -13,6 +13,8 @@ import { FormComponent } from './form.component';
     CommonModule,
 ],
   providers: [],
-  bootstrap: [FormComponent]
+  exports: [
+    FormComponent
+  ]
 })
 export class FormModule { }
