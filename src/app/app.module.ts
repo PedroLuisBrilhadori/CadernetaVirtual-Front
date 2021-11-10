@@ -14,9 +14,6 @@ import { GridModule, CardModule, ToolbarModule, FormModule} from 'libs/ui';
     BrowserModule,
     BrowserAnimationsModule,
     
-    GridModule,
-    CardModule,
-    ToolbarModule,
     FormModule
   ],
   providers: [],

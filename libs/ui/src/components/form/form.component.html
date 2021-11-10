@@ -11,16 +11,19 @@
     </tr></table>
     <div *ngFor="let bimestre of bimestres">
         <h3>{{bimestre.nome}} Bimestre</h3>
-        <table class="notas" cellspacing="0" *ngFor="let nota of bimestre.notasBimestre">
+        <table class="notas" cellspacing="0" *ngFor="let prova of provas">
             <div>
-                <tr><div class="nota-nome">{{nota.nome}}:</div>
+                <tr><div class="nota-nome">{{prova.nome}}:</div>
                 <td class="td-notas" *ngFor="let materia of materias">
                     <mat-form-field class="notas" appearance="fill">
                         <mat-label>{{materia.nome}}</mat-label>
-                        <input matInput placeholder="Ex. 10" type="number" name="{{materia.nome}}" [(ngModel)]="materia.nota" >
+
+                        <input matInput #inpt type="number" name="{{materia.nome}}" value="0">
                     </mat-form-field>
                 </td>
             </div>
         </table>
     </div>
   </form>
+
+  <button (click)="teste()">aaa</button>

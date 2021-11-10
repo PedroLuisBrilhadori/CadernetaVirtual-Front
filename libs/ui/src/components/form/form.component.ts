@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Directive, ElementRef, Input, QueryList, ViewChildren } from '@angular/core';
+import { Bimestre, Materia, Prova } from 'libs/ui';
 
 @Component({
   selector: 'p-form',
@@ -7,43 +8,37 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FormComponent{
 
+  @Input('bimestres')
+  bimestres: Bimestre[];
+
+  @Input('provas')
+  provas: Prova[];
+
   @Input('materias')
-  materias: any[];
+  materias: Materia[];
 
-  bimestres = [
-    {
-      nome: 'Primeiro',
-      notasBimestre: [
-        {nome: 'Prova 1'},
-        {nome: 'Trabalho'},
-        {nome: 'Prova 2'}
-      ]
-    },
-    {
-      nome: 'Segundo',
-      notasBimestre: [
-        {nome: 'Prova 1'},
-        {nome: 'Prova 2'},
-        {nome: 'Prova 3'}
-      ]
-    },
-    {
-      nome: 'Terceiro',
-      notasBimestre: [
-        {nome: 'Trabalho 1'},
-        {nome: 'Trabalho 2'},
-        {nome: 'Prova 1'}
-      ]
-    },
-    {
-      nome: 'Quarto',
-      notasBimestre: [
-        {nome: 'Prova 1'},
-        {nome: 'Trabalho'},
-      ]
-    }
-  ]
+  @ViewChildren('inpt', {read: ElementRef}) 
+  inputs: QueryList<ElementRef>;
 
 
+  teste(){
+    let i = 0;
+    let index = this.materias.length;
 
+    this.inputs.forEach( (input, index_input) => {
+      if(index_input < index){
+        this.provas[i].nota.push(input.nativeElement.value)
+      } else {
+        index = this.next(index)
+        i++;
+        this.provas[i].nota.push(input.nativeElement.value)
+      }
+    })
+    console.log(this.provas);
+  }
+
+  next(value: number){
+
+    return value + value;
+  }
 }
