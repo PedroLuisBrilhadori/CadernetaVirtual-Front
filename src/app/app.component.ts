@@ -7,7 +7,7 @@ import { Materia, Bimestre, Prova } from 'libs/ui';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'NotasProf';
+  title = 'Caderneta';
 
   materias: Materia[] = [
     {

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "libs",
   "projects": {
-    "NotasProf": {
+    "Caderneta": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/NotasProf",
+            "outputPath": "dist/Caderneta",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "NotasProf:build:production"
+              "browserTarget": "Caderneta:build:production"
             },
             "development": {
-              "browserTarget": "NotasProf:build:development"
+              "browserTarget": "Caderneta:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "NotasProf:build"
+            "browserTarget": "Caderneta:build"
           }
         },
         "test": {
@@ -134,5 +134,5 @@
       }
     }
   },
-  "defaultProject": "NotasProf"
+  "defaultProject": "Caderneta"
 }
