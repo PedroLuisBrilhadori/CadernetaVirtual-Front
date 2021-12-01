@@ -1,4 +1,4 @@
 export interface Card {
-    text: string,
-    image: string | undefined
+  text: string;
+  image: string | undefined;
 }

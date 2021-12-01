@@ -4,19 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { GridModule, CardModule, ToolbarModule, FormModule} from 'libs/ui';
-
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    
-    FormModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

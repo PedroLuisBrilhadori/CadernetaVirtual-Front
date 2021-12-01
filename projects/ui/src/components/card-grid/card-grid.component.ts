@@ -1,10 +1,7 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'card-grid',
-    templateUrl: 'card-grid.component.html'
+  selector: 'card-grid',
+  templateUrl: 'card-grid.component.html',
 })
-
-export class CardGridComponent {
-
-}
+export class CardGridComponent {}

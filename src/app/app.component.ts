@@ -4,26 +4,24 @@ import { Materia, Bimestre, Prova } from 'libs/ui';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'NotasProf';
 
-
-
   materias: Materia[] = [
     {
       nome: 'Português',
-      nota: []
+      nota: [],
     },
     {
       nome: 'Matematica',
-      nota: []
+      nota: [],
     },
     {
       nome: 'Geo',
-      nota: []
-    }
+      nota: [],
+    },
   ];
 
   provas: Prova[] = [
@@ -34,15 +32,13 @@ export class AppComponent {
     {
       nome: 'trabalho 2',
       nota: [],
-    }
-  ]
+    },
+  ];
 
   bimestres: Bimestre[] = [
     {
       nome: 'Primeiro',
       nota: [],
     },
-  ]
-
-
+  ];
 }

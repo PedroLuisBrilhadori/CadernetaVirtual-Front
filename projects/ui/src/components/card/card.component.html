@@ -1,14 +1,14 @@
 <mat-card class="example-card" *ngIf="isCard">
-    <div *ngIf="withImage">
-      <img mat-card-image src="{{source.image}}" alt="Photo of a Shiba Inu">
-    </div>
-    <mat-card-content>
-      <p>
-        {{source.text}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Agendar</button>
-      <button mat-button>Compartilhar</button>  
-    </mat-card-actions>
-  </mat-card>
+  <div *ngIf="withImage">
+    <img mat-card-image src="{{ source.image }}" alt="Photo of a Shiba Inu" />
+  </div>
+  <mat-card-content>
+    <p>
+      {{ source.text }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Agendar</button>
+    <button mat-button>Compartilhar</button>
+  </mat-card-actions>
+</mat-card>
