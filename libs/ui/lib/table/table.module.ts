@@ -7,4 +7,4 @@ import { MatTableModule } from '@angular/material/table';
   imports: [MatTableModule],
   exports: [TableComponent],
 })
-export class TableMModule {}
+export class TableModule {}
