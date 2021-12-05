@@ -136,7 +136,7 @@
     "ui": {
       "projectType": "library",
       "root": "libs/ui",
-      "sourceRoot": "libs/ui/src",
+      "sourceRoot": "libs/ui",
       "prefix": "lib",
       "architect": {
         "build": {
