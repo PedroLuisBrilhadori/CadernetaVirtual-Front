@@ -102,6 +102,37 @@
         }
       }
     },
+    "alunos": {
+      "projectType": "library",
+      "root": "libs/alunos",
+      "sourceRoot": "libs/alunos/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/alunos/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/alunos/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/alunos/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/alunos/src/test.ts",
+            "tsConfig": "libs/alunos/tsconfig.spec.json",
+            "karmaConfig": "libs/alunos/karma.conf.js"
+          }
+        }
+      }
+    },
     "ui": {
       "projectType": "library",
       "root": "libs/ui",
