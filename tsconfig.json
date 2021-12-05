@@ -19,14 +19,8 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "alunos": [
-        "dist/alunos/alunos",
-        "dist/alunos"
-      ],
-      "ui": [
-        "dist/ui/ui",
-        "dist/ui"
-      ],
+      "alunos": ["dist/alunos/alunos", "dist/alunos"],
+      "ui": ["dist/ui/ui", "dist/ui"]
     }
   },
   "angularCompilerOptions": {
