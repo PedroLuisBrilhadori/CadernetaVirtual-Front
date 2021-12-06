@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ColumnsTableModel } from '.';
+import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -11,6 +13,9 @@ export class TableComponent implements OnInit {
 
   @Input('displayedColumns')
   displayedColumns: ColumnsTableModel[];
+
+  @Output('selectedRow')
+  selected: EventEmitter<any> = new EventEmitter<any>();
 
   columnsToDisplay: string[] = [];
 
@@ -25,6 +30,6 @@ export class TableComponent implements OnInit {
   }
 
   selectRow(event: any) {
-    return event;
+    this.selected.emit(event);
   }
 }
