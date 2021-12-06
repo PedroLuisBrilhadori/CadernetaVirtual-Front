@@ -16,4 +16,8 @@ export class AppComponent {
     { name: 'id', displayedName: 'id' },
     { name: 'teste', displayedName: 'nome' },
   ];
+
+  selected(event: any) {
+    console.log(event);
+  }
 }

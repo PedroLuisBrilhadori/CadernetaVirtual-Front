@@ -1,1 +1,5 @@
-<app-table [dataSource]="data" [displayedColumns]="columns"></app-table>
+<app-table
+  [dataSource]="data"
+  [displayedColumns]="columns"
+  (selectedRow)="selected($event)"
+></app-table>
