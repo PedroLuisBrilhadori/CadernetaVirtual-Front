@@ -23,4 +23,8 @@ export class TableComponent implements OnInit {
       });
     }
   }
+
+  selectRow(event: any) {
+    return event;
+  }
 }
