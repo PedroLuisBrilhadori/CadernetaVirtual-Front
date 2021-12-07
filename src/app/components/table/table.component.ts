@@ -68,7 +68,7 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.data.length;
+    const numRows = this.dataSource.filteredData.length;
     return numSelected === numRows;
   }
 
@@ -78,7 +78,7 @@ export class TableComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    this.selection.select(...this.data);
+    this.selection.select(...this.dataSource.filteredData);
   }
 
   checkboxLabel(row?: any): string {
