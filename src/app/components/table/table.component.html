@@ -1,4 +1,10 @@
-<table mat-table [dataSource]="data" class="mat-elevation-z8">
+<table
+  mat-table
+  [dataSource]="dataSource"
+  matSort
+  (matSortChange)="changeSort($event)"
+  class="mat-elevation-z8"
+>
   <ng-container *ngIf="multiSelect" matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
       <mat-checkbox
@@ -24,7 +30,14 @@
     [matColumnDef]="column.displayedName"
     *ngFor="let column of displayedColumns"
   >
-    <th mat-header-cell *matHeaderCellDef>{{ column.displayedName }}</th>
+    <div *ngIf="column.sort; else elseBlock">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="{{ column.name }}">
+        {{ column.displayedName }}
+      </th>
+    </div>
+    <ng-template #elseBlock>
+      <th mat-header-cell *matHeaderCellDef>{{ column.displayedName }}</th>
+    </ng-template>
     <td mat-cell *matCellDef="let element">{{ element[column.name] }}</td>
   </ng-container>
 

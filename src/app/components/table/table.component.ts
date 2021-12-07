@@ -1,13 +1,23 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { ColumnsTableModel } from '.';
 import { EventEmitter } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, AfterViewInit {
   @Input('dataSource')
   data: any[];
 
@@ -20,9 +30,15 @@ export class TableComponent implements OnInit {
   @Output('selectedRow')
   selected: EventEmitter<any> = new EventEmitter<any>();
 
+  @ViewChild(MatSort) sort: MatSort;
+
   columnsToDisplay: string[] = [];
 
   selection = new SelectionModel<any>(true, []);
+
+  dataSource: any;
+
+  constructor(private _liveAnnoucer: LiveAnnouncer) {}
 
   ngOnInit() {
     if (this.multiSelect) {
@@ -35,6 +51,9 @@ export class TableComponent implements OnInit {
       this.displayedColumns.forEach((column) => {
         this.columnsToDisplay.push(column.displayedName);
       });
+      if (this.data) {
+        this.dataSource = new MatTableDataSource(this.data);
+      }
     }
   }
 
@@ -49,7 +68,7 @@ export class TableComponent implements OnInit {
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.data.length;
+    const numRows = this.dataSource.length;
     return numSelected === numRows;
   }
 
@@ -59,7 +78,7 @@ export class TableComponent implements OnInit {
       return;
     }
 
-    this.selection.select(...this.data);
+    this.selection.select(...this.dataSource);
   }
 
   checkboxLabel(row?: any): string {
@@ -69,5 +88,21 @@ export class TableComponent implements OnInit {
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
       row.position + 1
     }`;
+  }
+
+  // -----------------------------------------------------------------------------------------
+  // ----------------------------------------- sort ------------------------------------------
+  // -----------------------------------------------------------------------------------------
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
+
+  changeSort(sortState: any) {
+    if (sortState.direction) {
+      this._liveAnnoucer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnoucer.announce('Sorted clared');
+    }
   }
 }

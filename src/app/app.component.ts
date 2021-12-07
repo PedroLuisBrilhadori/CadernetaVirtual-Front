@@ -13,8 +13,8 @@ export class AppComponent {
   ];
 
   columns: ColumnsTableModel[] = [
-    { name: 'id', displayedName: 'id' },
-    { name: 'teste', displayedName: 'nome' },
+    { name: 'id', displayedName: 'id', sort: false },
+    { name: 'teste', displayedName: 'nome', sort: true },
   ];
 
   selected(event: any) {
