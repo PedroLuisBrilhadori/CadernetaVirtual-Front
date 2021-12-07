@@ -5,6 +5,9 @@
   (matSortChange)="changeSort($event)"
   class="mat-elevation-z8"
 >
+  <!-- 
+    ------------- MULTI SELECT ---------------------
+   -->
   <ng-container *ngIf="multiSelect" matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
       <mat-checkbox
@@ -25,6 +28,10 @@
       </mat-checkbox>
     </td>
   </ng-container>
+
+  <!-- 
+    ---------------------- COLUMNS ----------------------
+   -->
 
   <ng-container
     [matColumnDef]="column.displayedName"
