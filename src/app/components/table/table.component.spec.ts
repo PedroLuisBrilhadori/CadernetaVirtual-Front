@@ -45,4 +45,9 @@ describe('TableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should have component Data', () => {
+    expect(component.dataSource.filteredData.length).toEqual(2);
+    expect(component.columnsToDisplay.length).toEqual(mockColumns.length);
+  });
 });
