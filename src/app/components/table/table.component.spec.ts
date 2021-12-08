@@ -73,4 +73,19 @@ describe('TableComponent', () => {
       );
     });
   });
+
+  describe('CheckBoxes', () => {
+    beforeEach(() => {
+      component.multiSelect = true;
+      spyOn(component, 'isAllSelected');
+      spyOn(component, 'masterToggle');
+      spyOn(component, 'checkboxLabel');
+    });
+
+    it('should toggle checkboxes', () => {
+      expect(component.isAllSelected()).toBe(false);
+      component.masterToggle();
+      expect(component.isAllSelected()).toBe(true);
+    });
+  });
 });
