@@ -50,4 +50,6 @@ describe('TableComponent', () => {
     expect(component.dataSource.filteredData.length).toEqual(2);
     expect(component.columnsToDisplay.length).toEqual(mockColumns.length);
   });
+
+  it('OnInit', () => {});
 });
