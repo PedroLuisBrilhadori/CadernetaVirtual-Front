@@ -2,13 +2,20 @@ import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ColumnsTableModel, TableModule } from '.';
 
 import { TableComponent } from './table.component';
 
 const mockData = [
+  { id: '1', teste: 'Pedro' },
+  { id: '2', teste: 'Paulo' },
+];
+
+const mockEvent = { id: '1', teste: 'Pedro' };
+
+const mockEvents = [
   { id: '1', teste: 'Pedro' },
   { id: '2', teste: 'Paulo' },
 ];
@@ -47,9 +54,23 @@ describe('TableComponent', () => {
   });
 
   it('Should have component Data', () => {
-    expect(component.dataSource.filteredData.length).toEqual(2);
+    expect(component.dataSource.data.length).toEqual(2);
     expect(component.columnsToDisplay.length).toEqual(mockColumns.length);
   });
 
-  it('OnInit', () => {});
+  describe('SelectRow', () => {
+    beforeEach(() => {
+      spyOn(component.selection, 'toggle');
+      spyOn(component.selected, 'emit');
+    });
+
+    it('should onoff checkboxes', () => {
+      component.multiSelect = true;
+      component.selectRow(mockEvent);
+      expect(component.selection.toggle).toHaveBeenCalledWith(mockEvent);
+      expect(component.selected.emit).toHaveBeenCalledWith(
+        component.selection.selected
+      );
+    });
+  });
 });
