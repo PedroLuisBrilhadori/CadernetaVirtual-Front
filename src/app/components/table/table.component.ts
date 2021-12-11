@@ -58,8 +58,10 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
   selectRow(event: any) {
-    if (this.multiSelect) this.selection.toggle(event);
-    else this.selected.emit(event);
+    if (this.multiSelect) {
+      this.selection.toggle(event);
+      this.selected.emit(this.selection.selected);
+    } else this.selected.emit(event);
   }
 
   // -----------------------------------------------------------------------------------------
@@ -79,6 +81,7 @@ export class TableComponent implements OnInit, AfterViewInit {
     }
 
     this.selection.select(...this.dataSource.filteredData);
+    this.selected.emit(this.selection.selected);
   }
 
   checkboxLabel(row?: any): string {
