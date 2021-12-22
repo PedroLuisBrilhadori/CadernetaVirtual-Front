@@ -8,14 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { SideBarModule } from '../side-bar';
 
 @NgModule({
   declarations: [LayoutMainComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
+
     TableModule,
     ToolBarModule,
+    SideBarModule,
+
     MatSidenavModule,
     MatFormFieldModule,
     MatSelectModule,
