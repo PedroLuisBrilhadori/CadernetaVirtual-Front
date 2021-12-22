@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tool-bar.component.scss'],
 })
 export class ToolBarComponent implements OnInit {
+  titleApp: string = 'Caderneta Virtual';
+
   constructor() {}
 
   ngOnInit(): void {}
