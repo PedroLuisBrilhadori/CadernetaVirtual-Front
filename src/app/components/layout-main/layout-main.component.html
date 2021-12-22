@@ -1,8 +1,12 @@
-<app-tool-bar></app-tool-bar>
+<mat-drawer-container class="example-container" [hasBackdrop]="false">
+  <mat-drawer #drawer mode="side"> </mat-drawer>
 
-<app-table
-  [dataSource]="data"
-  [displayedColumns]="columns"
-  (selectedRow)="selected($event)"
-  [multiSelect]="true"
-></app-table>
+  <app-tool-bar (menuButton)="drawer.toggle()"></app-tool-bar>
+
+  <app-table
+    [dataSource]="data"
+    [displayedColumns]="columns"
+    (selectedRow)="selected($event)"
+    [multiSelect]="true"
+  ></app-table>
+</mat-drawer-container>
