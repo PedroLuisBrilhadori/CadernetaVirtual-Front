@@ -7,24 +7,10 @@ import { ColumnsTableModel, SideBarButton } from '..';
   styleUrls: ['./layout-main.component.scss'],
 })
 export class LayoutMainComponent {
-  constructor() {}
-
   buttons: SideBarButton[] = [
     { name: 'Alunos', route: 'alunos' },
     { name: 'Classes', route: 'classes' },
   ];
 
-  data: any[] = [
-    { id: '1', teste: 'Pedro' },
-    { id: '2', teste: 'Paulo' },
-  ];
-
-  columns: ColumnsTableModel[] = [
-    { name: 'id', displayedName: 'id', sort: false },
-    { name: 'teste', displayedName: 'nome', sort: true },
-  ];
-
-  selected(event: any) {
-    console.log(event);
-  }
+  constructor() {}
 }
