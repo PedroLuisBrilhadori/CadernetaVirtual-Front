@@ -1,2 +1,1 @@
-export * from './alunos.module';
-export * from './alunos.component';
+export * from './layout-main-alunos';

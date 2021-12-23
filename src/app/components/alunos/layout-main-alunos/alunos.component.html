@@ -1,0 +1,13 @@
+<div class="w-11/12 pt-3 mx-auto flex flex-row justify-between">
+  <button color="primary" mat-raised-button>Adicionar aluno</button>
+  <button color="warn" mat-raised-button>Remover aluno</button>
+</div>
+
+<div class="w-11/12 mx-auto pt-5">
+  <app-table
+    [dataSource]="data"
+    [displayedColumns]="columns"
+    (selectedRow)="selected($event)"
+    [multiSelect]="true"
+  ></app-table>
+</div>
