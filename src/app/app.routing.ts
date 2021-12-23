@@ -1,6 +1,5 @@
 import { Route } from '@angular/router';
-import { AlunosComponent } from './components/alunos/alunos.component';
-import { MenuPrincipalComponent } from './components/menu-principal';
+import { MenuPrincipalComponent, AlunosComponent } from './components';
 import { NotFoundComponent } from './components/ui-components';
 
 export const appRoutes: Route[] = [
