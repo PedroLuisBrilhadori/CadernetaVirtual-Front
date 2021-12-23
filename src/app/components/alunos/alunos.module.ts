@@ -2,7 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { TableModule } from '../table';
+import { TableModule } from '../ui-components';
 
 import { AlunosComponent } from './alunos.component';
 

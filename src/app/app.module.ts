@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LayoutMainModule } from './components';
-import { appRoutes } from './components/layout-main/app.routing';
+import { appRoutes } from './app.routing';
 
 @NgModule({
   declarations: [AppComponent],

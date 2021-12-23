@@ -1,4 +1,3 @@
-export * from './table';
 export * from './layout-main';
-export * from './tool-bar';
-export * from './side-bar';
+export * from './ui-components';
+export * from './alunos';

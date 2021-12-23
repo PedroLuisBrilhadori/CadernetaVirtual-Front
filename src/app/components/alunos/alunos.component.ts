@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColumnsTableModel, SideBarButton } from '..';
+import { ColumnsTableModel } from '../ui-components';
 
 @Component({
   selector: 'app-alunos',

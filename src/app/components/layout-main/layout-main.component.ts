@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SideBarButton } from '..';
+import { SideBarButton } from '../ui-components';
 
 @Component({
   selector: 'app-layout-main',
