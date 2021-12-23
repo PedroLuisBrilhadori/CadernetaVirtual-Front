@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ColumnsTableModel, SideBarButton } from '..';
+import { Component } from '@angular/core';
+import { SideBarButton } from '..';
 
 @Component({
   selector: 'app-layout-main',
@@ -11,6 +11,8 @@ export class LayoutMainComponent {
     { name: 'Alunos', route: 'alunos' },
     { name: 'Classes', route: 'classes' },
   ];
+
+  route: string;
 
   constructor() {}
 }
