@@ -27,6 +27,10 @@ Em nossa menssagem temos:
 
 O `Header` é o mais importante, a forma de se usar está em [Header Commit](#header-commit)
 
+O `Corpo` é opcional, a forma de se usar está em [Corpo Commit](#corpo-commit)
+
+O `Footer` é opcional, a forma de se usar está em [Footer Commit](#footer-commit)
+
 ## <a name="header-commit"></a> Header Commit
 
 ```
@@ -53,3 +57,29 @@ O `<Tipo>` e a `<DESCRIÇÃO>` são obrigatorias, o `(<ESCOPO>)` não deverá se
 - **refactor**: Quando o código é refatorado sem adicionar funcionalidades e nem corrigir bugs.
 - **test**: Quando é modificado algum teste, seja feat, fix ou refactor de teste.
 - **style**: Quando é alterado estilos de componentes
+
+### <a name="corpo-commit"></a> Corpo
+
+No `<Corpo>` será informado informações adicionais, caso necessário
+
+### <a name="footer-commit"></a> Footer
+
+No `<Footer>` será informado porque do commit, linkando a issue ou pull request
+
+ex.
+
+```
+    <HEADER>
+    <LINHA EM BRANCO>
+    <CORPO>
+    <LINHA EM BRANCO>
+    issue: #<ISSUE-NUMBER>
+```
+
+```
+    <HEADER>
+    <LINHA EM BRANCO>
+    <CORPO>
+    <LINHA EM BRANCO>
+    issue: #<PR-NUMBER>
+```
