@@ -1,6 +1,6 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="false">
   <mat-drawer #drawer mode="side" class="example-sidenav-content">
-    <app-side-bar class=""></app-side-bar>
+    <app-side-bar [buttons]="buttons" class=""></app-side-bar>
   </mat-drawer>
   <app-tool-bar (menuButton)="drawer.toggle()"></app-tool-bar>
 

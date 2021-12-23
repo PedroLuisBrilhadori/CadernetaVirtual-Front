@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColumnsTableModel } from '..';
+import { ColumnsTableModel, SideBarButton } from '..';
 
 @Component({
   selector: 'app-layout-main',
@@ -8,6 +8,11 @@ import { ColumnsTableModel } from '..';
 })
 export class LayoutMainComponent {
   constructor() {}
+
+  buttons: SideBarButton[] = [
+    { name: 'Alunos', route: 'alunos' },
+    { name: 'Classes', route: 'classes' },
+  ];
 
   data: any[] = [
     { id: '1', teste: 'Pedro' },

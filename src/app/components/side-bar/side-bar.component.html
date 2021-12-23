@@ -1,2 +1,6 @@
-<button class="w-44 h-16" mat-stroked-button>Basic</button> <br />
-<button class="w-44 h-16" mat-stroked-button>Basic</button>
+<div *ngFor="let button of buttons">
+  <button class="w-44 h-16" mat-stroked-button (click)="go(button.route)">
+    {{ button.name }}
+  </button>
+  <br />
+</div>
