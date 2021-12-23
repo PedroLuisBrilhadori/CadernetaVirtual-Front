@@ -10,19 +10,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SideBarModule } from '../side-bar';
 
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routing';
+import { AlunosModule } from '../alunos';
+
 @NgModule({
   declarations: [LayoutMainComponent],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
 
-    TableModule,
     ToolBarModule,
     SideBarModule,
+    AlunosModule,
 
     MatSidenavModule,
     MatFormFieldModule,
     MatSelectModule,
+
+    RouterModule,
   ],
   exports: [LayoutMainComponent],
 })

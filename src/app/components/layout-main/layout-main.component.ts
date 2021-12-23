@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ColumnsTableModel, SideBarButton } from '..';
+import { Component } from '@angular/core';
+import { SideBarButton } from '..';
 
 @Component({
   selector: 'app-layout-main',
@@ -7,24 +7,12 @@ import { ColumnsTableModel, SideBarButton } from '..';
   styleUrls: ['./layout-main.component.scss'],
 })
 export class LayoutMainComponent {
-  constructor() {}
-
   buttons: SideBarButton[] = [
     { name: 'Alunos', route: 'alunos' },
     { name: 'Classes', route: 'classes' },
   ];
 
-  data: any[] = [
-    { id: '1', teste: 'Pedro' },
-    { id: '2', teste: 'Paulo' },
-  ];
+  route: string;
 
-  columns: ColumnsTableModel[] = [
-    { name: 'id', displayedName: 'id', sort: false },
-    { name: 'teste', displayedName: 'nome', sort: true },
-  ];
-
-  selected(event: any) {
-    console.log(event);
-  }
+  constructor() {}
 }
