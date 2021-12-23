@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ColumnsTableModel } from '../../ui-components';
 
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { FormAddComponent } from '../form-add';
+
 @Component({
   selector: 'app-alunos',
   templateUrl: './alunos.component.html',
@@ -21,7 +24,13 @@ export class AlunosComponent implements OnInit {
     console.log(event);
   }
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
+
+  openForm() {
+    const dialogRef = this.dialog.open(FormAddComponent);
+
+    dialogRef.afterClosed().subscribe((result) => console.log(result));
+  }
 
   ngOnInit(): void {}
 }

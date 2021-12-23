@@ -1,1 +1,11 @@
-<p>form-add works!</p>
+<div>
+  <h2 mat-dialog-title>{{ titleForm }}</h2>
+  <mat-dialog-content>
+    <div>formulário</div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Fechar</button>
+    <button mat-button [mat-dialog-close]="true">Ok</button>
+  </mat-dialog-actions>
+</div>

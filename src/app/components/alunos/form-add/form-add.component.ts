@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-add.component.scss'],
 })
 export class FormAddComponent implements OnInit {
+  titleForm: string = 'Novo Aluno';
+
   constructor() {}
 
   ngOnInit(): void {}
