@@ -1,13 +1,16 @@
-<mat-drawer-container class="example-container" [hasBackdrop]="false">
-  <mat-drawer #drawer mode="side" class="example-sidenav-content">
+<mat-sidenav-container class="w-hull h-full">
+  <mat-sidenav #sidebar>
     <app-side-bar
       (routes)="route = $event"
       routerLink="{{ route }}"
       [buttons]="buttons"
       class=""
     ></app-side-bar>
-  </mat-drawer>
-  <app-tool-bar (menuButton)="drawer.toggle()"></app-tool-bar>
+  </mat-sidenav>
 
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+  <mat-sidenav-content>
+    <app-tool-bar (menuButton)="sidebar.toggle()"></app-tool-bar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
